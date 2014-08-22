@@ -1,0 +1,7 @@
+flask
+flask-sqlalchemy
+flask-restful
+flask-restless
+# 2.17 has troubles with threads
+python-novaclient==2.16
+requests

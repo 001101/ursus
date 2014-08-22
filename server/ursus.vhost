@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    WSGIDaemonProcess ursus user=www-data group=www-data threads=15
+    WSGIScriptAlias / /var/www/ursus/ursus.wsgi
+    Alias /assets "/var/www/ursus/assets"
+
+    <Directory /var/www/ursus>
+        WSGIProcessGroup ursus
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+
+   <Directory /var/www/ursus/assets>
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
